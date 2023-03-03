@@ -1,8 +1,19 @@
 import React from 'react'
+import AboutForm from './AboutForm'
+import EduForm from './EduForm'
+import ExpForm from './ExpForm'
+import './Form.css';
+
+
 
 function Form(){
     return(
-        <div>This is the form component</div>
+        <div>
+            <h1>Resume Generator</h1>
+            <AboutForm />
+            <EduForm />
+            <ExpForm />
+        </div>
     )
 }
 
