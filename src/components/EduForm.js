@@ -1,17 +1,44 @@
 import React from 'react'
 import './Form.css';
 
-function EduForm(){
+function EduForm({handleEduChange}){
     return(
         <div>
             <h2>Education</h2>
             <form className='form'>
-                <input type='text' placeholder='Institution'></input>
-                <input type='text' placeholder='Location'></input>
-                <input type='text' placeholder='Degree Type'></input>
-                <input type='text' placeholder='Degree Field'></input>
-                <input type='text' placeholder='Start Date'></input>
-                <input type='text' placeholder='End Date'></input>
+
+                <input type='text' 
+                       name="institution"
+                       placeholder='Institution'
+                       onChange={handleEduChange}
+                />
+
+                <input type='text' 
+                       name="location"
+                       placeholder='Location'
+                       onChange={handleEduChange}
+                
+                />
+                <input type='text' 
+                       name="degreeType"
+                       placeholder='Degree Type'
+                       onChange={handleEduChange}
+                />
+                <input type='text'
+                       name="degreeField"
+                       placeholder='Degree Field'
+                       onChange={handleEduChange}
+                />
+                <input type='text'
+                       name="startDate"
+                       placeholder='Start Date'
+                       onChange={handleEduChange}
+                />
+                <input type='text'
+                       name="endDate"
+                       placeholder='End Date'
+                       onChange={handleEduChange}
+                />
                 <button>Submit!</button>
             </form>
         </div>

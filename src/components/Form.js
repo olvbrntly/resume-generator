@@ -7,18 +7,15 @@ import './Form.css';
 
 
 
-function Form({onSubmitAboutForm,handleChange, aboutInfo}){
-
-    // function onSubmitForm(){
-    //     aboutParentCallback(...aboutInfo);
-    //     //e.preventDefault();
-    // }
+function Form({onSubmitAboutForm, handleAboutChange,handleEduChange, aboutInfo}){
     return(
         <div>
             <h1>Resume Generator</h1>
-            <AboutForm onSubmitAboutForm={onSubmitAboutForm} handleChange={handleChange} aboutInfo={aboutInfo}/>
-            {/* <button onClick={testMessage}>{message}</button> */}
-            <EduForm />
+            <AboutForm onSubmitAboutForm={onSubmitAboutForm} handleChange={handleAboutChange} aboutInfo={aboutInfo}/>
+    
+            <EduForm handleEduChange={handleEduChange}/>
+
+            
             <ExpForm />
         </div>
     )

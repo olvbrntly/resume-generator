@@ -23,13 +23,13 @@ function App() {
    
   }
 
-  function handleChange(e){
+  function handleAboutChange(e){
          setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
      }
 
 
   //EDUCATION INFO STATE---------------------------------------
-  const [EduInfo, setEduInfo] = useState(
+  const [eduInfo, setEduInfo] = useState(
     {
       institution:'',
       location:'',
@@ -38,36 +38,18 @@ function App() {
       startDate:'',
       endDate:'',
     })
+
+  function handleEduChange(e){
+      setEduInfo({...eduInfo, [e.target.name]: e.target.value})
+  }
   const [EduInfoArray, setEduInfoArray] = useState({})
 
   return (
     <div className="App">
-      <Form  onSubmitAboutForm={onSubmitAboutForm} handleChange={handleChange} aboutInfo={aboutInfo} /> 
-      <Resume aboutInfo={submittedAboutInfo}/>
+      <Form  onSubmitAboutForm={onSubmitAboutForm} handleAboutChange={handleAboutChange} handleEduChange={handleEduChange} aboutInfo={aboutInfo} /> 
+      <Resume aboutInfo={submittedAboutInfo} eduInfo={eduInfo}/>
     </div>
   );
 }
 
 export default App;
-
-
-  // const [about, setAbout]=useState(
-  //   {
-  //     firstName: '',
-  //     lastName: '',
-  //     email:'',
-  //     phoneNumber:'',
-  //     linkedIn:'',
-  //   }
-  // )
-
-//   function handleChange(e){
-//     setAbout({...about, [e.target.name]: e.target.value})
-// }
-  // const handleAboutCallback = (fName) => {
-  //   setAbout({...about, 
-  //       [about.firstName]:fName,
-  //     }
-
-  //   )
-  // }
