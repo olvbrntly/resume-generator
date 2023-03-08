@@ -7,7 +7,7 @@ import './Form.css';
 
 
 
-function Form({onSubmitForm,handleChange, aboutInfo}){
+function Form({onSubmitAboutForm,handleChange, aboutInfo}){
 
     // function onSubmitForm(){
     //     aboutParentCallback(...aboutInfo);
@@ -16,7 +16,7 @@ function Form({onSubmitForm,handleChange, aboutInfo}){
     return(
         <div>
             <h1>Resume Generator</h1>
-            <AboutForm onSubmitForm={onSubmitForm} handleChange={handleChange} aboutInfo={aboutInfo}/>
+            <AboutForm onSubmitAboutForm={onSubmitAboutForm} handleChange={handleChange} aboutInfo={aboutInfo}/>
             {/* <button onClick={testMessage}>{message}</button> */}
             <EduForm />
             <ExpForm />

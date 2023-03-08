@@ -1,17 +1,16 @@
 import React from 'react'
 import './Form.css';
-function AboutForm({handleChange,onSubmitForm,aboutInfo}){
+function AboutForm({handleChange,onSubmitAboutForm}){
        
     return(
         <div>
             <h2>About You</h2>
-            <form className='form' onSubmit={onSubmitForm} >
+            <form className='form' onSubmit={onSubmitAboutForm} >
  
                 <input type="text" 
                        name="firstName"
                        placeholder='First Name'
                        onChange={handleChange}
-                       value={aboutInfo.firstName}
                        />
                 <input type="text" 
                        name='lastName'

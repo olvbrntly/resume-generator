@@ -14,13 +14,12 @@ function App() {
     phoneNumber:'123-456-7890',
     linkedIn:'linkedin',
   })
-
-  function onSubmitForm(e){
+  const[submittedAboutInfo, setSubmittedAboutInfo] = useState({...aboutInfo})
+  
+  function onSubmitAboutForm(e){
     e.preventDefault();
-    let info = {
-
-    }
-
+    setSubmittedAboutInfo({...aboutInfo})
+  
   }
 
   function handleChange(e){
@@ -29,8 +28,8 @@ function App() {
 
   return (
     <div className="App">
-      <Form  onSubmitForm={onSubmitForm} handleChange={handleChange} aboutInfo={aboutInfo} /> 
-      <Resume aboutInfo={aboutInfo}/>
+      <Form  onSubmitAboutForm={onSubmitAboutForm} handleChange={handleChange} aboutInfo={aboutInfo} /> 
+      <Resume aboutInfo={submittedAboutInfo}/>
     </div>
   );
 }
