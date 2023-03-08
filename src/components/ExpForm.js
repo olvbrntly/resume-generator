@@ -4,7 +4,10 @@ import './Form.css';
 function ExpForm(){
     return(
         <div>
-            <h2>Experience</h2>
+            <div className='form-title-with-btn'>
+              <h2>Experience</h2>
+              <button className='add-btn'>+ Experience</button>
+            </div>
             <form className='form'>
                 <input type='text' placeholder='Job Title'></input>
                 <input type='text' placeholder='Company'></input>

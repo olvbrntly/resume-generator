@@ -4,7 +4,11 @@ import './Form.css';
 function EduForm({handleEduChange}){
     return(
         <div>
-            <h2>Education</h2>
+            <div className='form-title-with-btn'>
+              <h2>Education</h2>
+              <button className='add-btn'>+ Education</button>
+            </div>
+            
             <form className='form'>
 
                 <input type='text' 
