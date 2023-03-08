@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form  onSubmitForm={onSubmitForm} handleChange={handleChange} />
+      <Form  onSubmitForm={onSubmitForm} handleChange={handleChange} /> 
       <Resume aboutInfo={aboutInfo}/>
     </div>
   );
