@@ -1,24 +1,38 @@
 import React from 'react'
 import './Form.css';
-function AboutForm({handleChange}){
+function AboutForm({handleChange,onSubmitForm}){
        
     return(
         <div>
             <h2>About You</h2>
-            <form className='form'>
+            <form className='form' onSubmit={onSubmitForm} >
+ 
                 <input type="text" 
+                       name="firstName"
                        placeholder='First Name'
-                       onChange={handleChange}/>
+                       onChange={handleChange}
+                       />
                 <input type="text" 
-                       placeholder='Last Name'/>
+                       name='lastName'
+                       placeholder='Last Name'
+                       onChange={handleChange}
+                       />
+                <input type="text"
+                       name="email" 
+                       placeholder='Email'
+                       onChange={handleChange}
+                       />
                 <input type="text" 
-                       placeholder='Email'/>
+                       name="phoneNumber"
+                       placeholder='000-000-0000'
+                       onChange={handleChange}
+                       />
                 <input type="text" 
-                       placeholder='000-000-0000'/>
-                <input type="text" 
-                       placeholder='LinkedIn'/>
-
-                <button type='submit'>Submit!</button>
+                       name="linkedIn"
+                       placeholder='LinkedIn'
+                       onChange={handleChange}
+                       />
+              <button type='submit'>Submit!</button>
             </form>
         </div>
     )
