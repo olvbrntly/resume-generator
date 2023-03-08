@@ -7,6 +7,7 @@ import Form from './components/Form'
 
 
 function App() {
+  //ABOUT INFO STATE_--------------------------------------
   const [aboutInfo, setAboutInfo] = useState({
     firstName:'FIRST NAME ',
     lastName:'LAST NAME',
@@ -19,12 +20,25 @@ function App() {
   function onSubmitAboutForm(e){
     e.preventDefault();
     setSubmittedAboutInfo({...aboutInfo})
-  
+   
   }
 
   function handleChange(e){
          setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
      }
+
+
+  //EDUCATION INFO STATE---------------------------------------
+  const [EduInfo, setEduInfo] = useState(
+    {
+      institution:'',
+      location:'',
+      degreeType:'',
+      degreeField:'',
+      startDate:'',
+      endDate:'',
+    })
+  const [EduInfoArray, setEduInfoArray] = useState({})
 
   return (
     <div className="App">
