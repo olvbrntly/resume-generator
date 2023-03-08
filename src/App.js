@@ -12,7 +12,7 @@ function App() {
     firstName:'FIRST NAME ',
     lastName:'LAST NAME',
     email:'email', 
-    phoneNumber:'123-456-7890',
+    phoneNumber:'000-000-000',
     linkedIn:'linkedin',
   })
   const[submittedAboutInfo, setSubmittedAboutInfo] = useState({...aboutInfo})
@@ -20,7 +20,7 @@ function App() {
   function onSubmitAboutForm(e){
     e.preventDefault();
     setSubmittedAboutInfo({...aboutInfo})
-   
+
   }
 
   function handleAboutChange(e){
@@ -29,24 +29,26 @@ function App() {
 
 
   //EDUCATION INFO STATE---------------------------------------
-  const [eduInfo, setEduInfo] = useState(
+  const initialEducation = [
     {
-      institution:'',
-      location:'',
-      degreeType:'',
-      degreeField:'',
-      startDate:'',
-      endDate:'',
-    })
+      id:1,
+      institution:'USC',
+      location:'Los Angeles',
+      degreeType:'Bachelors',
+      degreeField:'Business Admin',
+      startDate:'Jan 2019',
+      endDate:'May 2021',
+    },
+  ]
+  const [eduInfo, setEduInfo] = useState(initialEducation)
 
   function handleEduChange(e){
-      setEduInfo({...eduInfo, [e.target.name]: e.target.value})
-  }
-  const [EduInfoArray, setEduInfoArray] = useState({})
+       setEduInfo({...eduInfo, [e.target.name]: e.target.value})
+   }
 
   return (
     <div className="App">
-      <Form  onSubmitAboutForm={onSubmitAboutForm} handleAboutChange={handleAboutChange} handleEduChange={handleEduChange} aboutInfo={aboutInfo} /> 
+      <Form onSubmitAboutForm={onSubmitAboutForm} handleAboutChange={handleAboutChange}  aboutInfo={aboutInfo} /> 
       <Resume aboutInfo={submittedAboutInfo} eduInfo={eduInfo}/>
     </div>
   );
