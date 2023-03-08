@@ -9,7 +9,7 @@ import './Form.css';
 
 function Form({onSubmitAboutForm, handleAboutChange,handleEduChange, aboutInfo}){
     return(
-        <div>
+        <div className='form-container'>
             <h1>Resume Generator</h1>
             <AboutForm onSubmitAboutForm={onSubmitAboutForm} handleChange={handleAboutChange} aboutInfo={aboutInfo}/>
     
