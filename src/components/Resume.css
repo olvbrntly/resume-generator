@@ -3,3 +3,13 @@
     height:825px;
     width:619px;
 }
+
+.full-name{
+    display:flex;
+    gap:20px;
+}
+
+.contact-info{
+    display:flex;
+    gap:20px;
+}

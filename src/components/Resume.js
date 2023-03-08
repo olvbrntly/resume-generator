@@ -6,7 +6,6 @@ function Resume({aboutInfo}){
     
     return(
         <div className='resume'>
-            <h1>Resume</h1>
             <AboutResume aboutInfo={aboutInfo}/>
         </div>
     )

@@ -8,18 +8,19 @@ import Form from './components/Form'
 
 function App() {
   const [aboutInfo, setAboutInfo] = useState({
-    firstname:'',
-    lastName:'',
-    email:'',
-    phoneNumber:'',
-    linkedIn:'',
+    firstName:'FIRST NAME ',
+    lastName:'LAST NAME',
+    email:'email', 
+    phoneNumber:'123-456-7890',
+    linkedIn:'linkedin',
   })
 
   function onSubmitForm(e){
     e.preventDefault();
-    setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
-    alert('submitted')
-    
+    let info = {
+
+    }
+
   }
 
   function handleChange(e){
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form  onSubmitForm={onSubmitForm} handleChange={handleChange} /> 
+      <Form  onSubmitForm={onSubmitForm} handleChange={handleChange} aboutInfo={aboutInfo} /> 
       <Resume aboutInfo={aboutInfo}/>
     </div>
   );
