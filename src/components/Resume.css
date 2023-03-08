@@ -1,15 +1,33 @@
 .resume{
     border:1px solid black;
-    height:825px;
+    height: 99vh;
     width:619px;
 }
 
+/* ---------- ABOUT PORTION OF RESUME ------------ */
 .full-name{
     display:flex;
-    gap:20px;
+    gap:8px;
+    font-size:30px;
+    margin: 10px 0 0 10px;
+    
 }
-
+.bar-deco{
+    border:1px solid black;
+    margin:1px 10px 1px 10px;
+}
 .contact-info{
     display:flex;
-    gap:20px;
+    font-size:14px;
+    gap:8px;
+    margin:2px 0 0 10px
 }
+
+/* ----------- EDUCATION PORTION OF RESUME ---------- */
+
+
+
+
+
+
+
