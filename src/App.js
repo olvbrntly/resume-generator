@@ -32,12 +32,21 @@ function App() {
   const initialEducation = [
     {
       id:1,
-      institution:'USC',
-      location:'Los Angeles',
-      degreeType:'Bachelors',
-      degreeField:'Business Admin',
+      institution:'University of Southern California, Marshall School of Business',
+      location:'Los Angeles, CA',
+      degreeType:'Bachelor of Science',
+      degreeField:'Business Administration',
       startDate:'Jan 2019',
       endDate:'May 2021',
+    },
+    {
+      id:2,
+      institution:'University of Southern California, School of Cinematic Arts',
+      location:'Los Angeles, CA',
+      degreeType:'Bachelor of Science',
+      degreeField:'Film Production',
+      startDate:'Jan 2022',
+      endDate:'Present',
     },
   ]
   const [eduInfo, setEduInfo] = useState(initialEducation)

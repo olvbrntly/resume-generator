@@ -25,9 +25,35 @@
 
 /* ----------- EDUCATION PORTION OF RESUME ---------- */
 
+.edu-resume-title{
+    margin: 25px 0px 0px 10px;
+    font-size:17px;
+    font-weight: bold;
+}
+.edu-line1, .edu-line2{
+    display:flex;
+    justify-content: space-between;
+    margin:0px 10px 0px 10px;
+    font-size:15px;
+}
 
+.edu-line2{
+    margin-bottom: 10px;
+}
+.edu-institution{
+    font-weight:700
+}
 
+.edu-degree{
+    display:flex;
+    gap:4px;
+    font-style:italic;
+}
 
+.edu-dates{
+    display:flex;
+    gap:3px;
+}
 
 
 
