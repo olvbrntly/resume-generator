@@ -43,7 +43,7 @@ function EduForm({handleEduChange}){
                        placeholder='End Date'
                        onChange={handleEduChange}
                 />
-                <button>Submit!</button>
+         
             </form>
         </div>
     )
