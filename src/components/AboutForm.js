@@ -1,11 +1,11 @@
 import React from 'react'
 import './Form.css';
-function AboutForm({handleChange,onSubmitAboutForm}){
+function AboutForm({handleChange}){
        
     return(
         <div>
             <h2>About You</h2>
-            <form className='form' onSubmit={onSubmitAboutForm} >
+            <form className='form' >
  
                 <input type="text" 
                        name="firstName"
@@ -32,7 +32,6 @@ function AboutForm({handleChange,onSubmitAboutForm}){
                        placeholder='LinkedIn'
                        onChange={handleChange}
                        />
-              <button type='submit'>Submit!</button>
             </form>
         </div>
     )
