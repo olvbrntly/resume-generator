@@ -25,24 +25,16 @@ function App() {
 
   function handleAboutChange(e){
          setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
+         alert(edus[0].id)
+         alert(edus[1].id)
      }
 
 
   //EDUCATION INFO STATE---------------------------------------
 
-  const [eduInfo, setEduInfo] = useState(
-    {
-        id:1,
-        institution:'Institution Name',
-        location:'City, State',
-        degreeType:'Degree Type',
-        degreeField:'Degree Field',
-        startDate:'Start Date',
-        endDate:'End Date',
-    })
-
   let initialEdus = [
-    {id:1,
+    {
+      id:1,
     institution:'Institution Name',
     location:'City, State',
     degreeType:'Degree Type',
@@ -50,33 +42,50 @@ function App() {
     startDate:'Start Date',
     endDate:'End Date',
   },
-    {id:1,
-    institution:'Institution Name',
+    {
+      id:2,
+    institution:'Institution Name 2',
     location:'City, State',
     degreeType:'Degree Type',
     degreeField:'Degree Field',
     startDate:'Start Date',
     endDate:'End Date',
-  }];
+  },
+  {
+    id:3,
+    institution:'Institution Name 3',
+    location:'City, State',
+    degreeType:'Degree Type',
+    degreeField:'Degree Field',
+    startDate:'Start Date',
+    endDate:'End Date',
+  }
+];
   
-
   const [edus, setEdus] = useState(initialEdus)
+  const [selectedEduID, setSelectedEduID] = useState(1);
 
+  //const selectedEdu = edus.find(e => e.id === selectedEduID);
 
-  function handleEduChange(e){
-       setEdus({...edus, [e.target.name]: e.target.value})
-   }
+function getIdCallback(id){
+  setSelectedEduID(id);
+}
 
-   //onclick function
-   function addEdu(e){
-      e.preventdefault();
-      //add edu to the array
+function handleEduChange(e){ 
+  let updatedEdus = edus.map(edu => {
+    if(edu.id === selectedEduID){
+      return{...edu, [e.target.name]:e.target.value};
+    }
+    return edu
+  });
+
+  setEdus(updatedEdus)  
    }
 
   return (
     <div className="App">
-      <Form  handleAboutChange={handleAboutChange}  aboutInfo={aboutInfo} handleEduChange={handleEduChange} edus={edus}/> 
-      <Resume aboutInfo={aboutInfo} eduInfo={eduInfo} edus={edus}/>
+      <Form  handleAboutChange={handleAboutChange}  aboutInfo={aboutInfo} handleEduChange={handleEduChange} edus={edus} getIdCallback={getIdCallback}/> 
+      <Resume aboutInfo={aboutInfo} edus={edus}/>
     </div>
   );
 }
