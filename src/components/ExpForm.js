@@ -15,7 +15,7 @@ function ExpForm(){
                 <input type='text' placeholder='Start Date'></input>
                 <input type='text' placeholder='End Date'></input>
                 <textarea placeholder='description(add two - three bullet points here)'></textarea>
-                <button type='submit'>Submit!</button>
+               
             </form>
         </div>
     )
