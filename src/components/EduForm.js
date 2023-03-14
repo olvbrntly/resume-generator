@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css';
 
-function EduForm({handleEduChange, eduId}){
+function EduForm({handleEduChange, eduId, deleteEdus}){
     
     return(
         <div>
@@ -44,6 +44,8 @@ function EduForm({handleEduChange, eduId}){
                        onChange={handleEduChange}
                      
                 />
+
+               {(eduId !== 1) && <button onClick={deleteEdus} name={eduId}>Delete</button>}
          
             </form>
         </div>

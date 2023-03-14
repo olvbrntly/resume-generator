@@ -7,7 +7,7 @@ import './Form.css';
 
 
 
-function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getIdCallback, addEdus}){
+function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getIdCallback, addEdus, deleteEdus}){
     return(
         <div className='form-container'>
             <h1>Resume Generator</h1>
@@ -18,7 +18,7 @@ function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, 
             </div>
             <div> {edus.map(edu =>(
                 <div key={edu.id} onSelect={() => {getIdCallback(edu.id)}} >
-                    <EduForm eduId={edu.id} handleEduChange={handleEduChange} />
+                    <EduForm eduId={edu.id} handleEduChange={handleEduChange} deleteEdus={deleteEdus}/>
                 </div>
             ))} </div>
             

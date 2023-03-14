@@ -4,12 +4,12 @@ import AboutResume from './AboutResume'
 import EduResume from './EduResume'
 
 
-function Resume({aboutInfo, eduInfo}){
+function Resume({aboutInfo, eduInfo,edus}){
     
     return(
         <div className='resume'>
             <AboutResume aboutInfo={aboutInfo}/>
-            <EduResume eduInfo={eduInfo}/>
+            <EduResume edus={edus}/>
 
         </div>
     )

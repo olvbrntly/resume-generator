@@ -1,13 +1,13 @@
 import './App.css';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid'
 import Resume from './components/Resume'
 import Form from './components/Form'
 
 
 
 function App() {
-  const id =useId();
+ 
   //ABOUT INFO STATE_--------------------------------------
   const [aboutInfo, setAboutInfo] = useState({
     firstName:'FIRST NAME ',
@@ -81,17 +81,24 @@ function handleEduChange(e){
   setEdus(updatedEdus)  
 }
 
-function addEdus(){
+function addEdus(e){
+  e.preventDefault();
   setEdus(prevState => [...prevState, 
     {
-      id:2,
-      institution:'Institution Name 2',
+      id:uuidv4(),
+      institution:'Institution Name',
       location:'City, State',
       degreeType:'Degree Type',
       degreeField:'Degree Field',
       startDate:'Start Date',
       endDate:'End Date',
     }])
+}
+
+function deleteEdus(e){
+  e.preventDefault();
+  setEdus(prevEdus => prevEdus.filter((edu)=> edu.id !== e.target.name))
+
 }
 
   return (
@@ -102,6 +109,7 @@ function addEdus(){
              edus={edus} 
              getIdCallback={getIdCallback}
              addEdus={addEdus}
+             deleteEdus={deleteEdus}
              /> 
       <Resume aboutInfo={aboutInfo} edus={edus}/>
     </div>
