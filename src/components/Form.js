@@ -7,14 +7,14 @@ import './Form.css';
 
 
 
-function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getIdCallback }){
+function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getIdCallback, addEdus}){
     return(
         <div className='form-container'>
             <h1>Resume Generator</h1>
             <AboutForm onSubmitAboutForm={onSubmitAboutForm} handleChange={handleAboutChange} aboutInfo={aboutInfo}/>
             <div className='form-title-with-btn'>
               <h2>Education</h2>
-              <button className='add-btn'>+ Education</button>
+              <button className='add-btn' onClick={addEdus}>+ Education</button>
             </div>
             <div> {edus.map(edu =>(
                 <div key={edu.id} onSelect={() => {getIdCallback(edu.id)}} >

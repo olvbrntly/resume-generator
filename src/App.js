@@ -1,12 +1,13 @@
 import './App.css';
 import { useState } from 'react';
-
+import { v4 as uuidv4 } from 'uuid';
 import Resume from './components/Resume'
 import Form from './components/Form'
 
 
 
 function App() {
+  const id =useId();
   //ABOUT INFO STATE_--------------------------------------
   const [aboutInfo, setAboutInfo] = useState({
     firstName:'FIRST NAME ',
@@ -25,8 +26,6 @@ function App() {
 
   function handleAboutChange(e){
          setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
-         alert(edus[0].id)
-         alert(edus[1].id)
      }
 
 
@@ -35,31 +34,31 @@ function App() {
   let initialEdus = [
     {
       id:1,
-    institution:'Institution Name',
-    location:'City, State',
-    degreeType:'Degree Type',
-    degreeField:'Degree Field',
-    startDate:'Start Date',
-    endDate:'End Date',
-  },
-    {
-      id:2,
-    institution:'Institution Name 2',
-    location:'City, State',
-    degreeType:'Degree Type',
-    degreeField:'Degree Field',
-    startDate:'Start Date',
-    endDate:'End Date',
-  },
-  {
-    id:3,
-    institution:'Institution Name 3',
-    location:'City, State',
-    degreeType:'Degree Type',
-    degreeField:'Degree Field',
-    startDate:'Start Date',
-    endDate:'End Date',
-  }
+      institution:'Institution Name',
+      location:'City, State',
+      degreeType:'Degree Type',
+      degreeField:'Degree Field',
+      startDate:'Start Date',
+      endDate:'End Date',
+    },
+  //   {
+  //     id:2,
+  //   institution:'Institution Name 2',
+  //   location:'City, State',
+  //   degreeType:'Degree Type',
+  //   degreeField:'Degree Field',
+  //   startDate:'Start Date',
+  //   endDate:'End Date',
+  // },
+  // {
+  //   id:3,
+  //   institution:'Institution Name 3',
+  //   location:'City, State',
+  //   degreeType:'Degree Type',
+  //   degreeField:'Degree Field',
+  //   startDate:'Start Date',
+  //   endDate:'End Date',
+  // }
 ];
   
   const [edus, setEdus] = useState(initialEdus)
@@ -80,11 +79,30 @@ function handleEduChange(e){
   });
 
   setEdus(updatedEdus)  
-   }
+}
+
+function addEdus(){
+  setEdus(prevState => [...prevState, 
+    {
+      id:2,
+      institution:'Institution Name 2',
+      location:'City, State',
+      degreeType:'Degree Type',
+      degreeField:'Degree Field',
+      startDate:'Start Date',
+      endDate:'End Date',
+    }])
+}
 
   return (
     <div className="App">
-      <Form  handleAboutChange={handleAboutChange}  aboutInfo={aboutInfo} handleEduChange={handleEduChange} edus={edus} getIdCallback={getIdCallback}/> 
+      <Form  handleAboutChange={handleAboutChange}  
+             aboutInfo={aboutInfo} 
+             handleEduChange={handleEduChange} 
+             edus={edus} 
+             getIdCallback={getIdCallback}
+             addEdus={addEdus}
+             /> 
       <Resume aboutInfo={aboutInfo} edus={edus}/>
     </div>
   );
