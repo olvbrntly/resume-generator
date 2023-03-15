@@ -78,3 +78,7 @@
 .exp{
     margin-bottom: 10px;
 }
+.exp-text{
+    width:600px;
+    overflow-wrap: anywhere;
+}
