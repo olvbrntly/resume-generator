@@ -1,7 +1,7 @@
 import React from "react";
 import './Resume.css';
 
-function EduResume({eduInfo, edus}){
+function EduResume({edus}){
     return(
         <div className="edu-resume">
             <div className="edu-resume-title">EDUCATION</div>
