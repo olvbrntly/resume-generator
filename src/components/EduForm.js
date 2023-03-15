@@ -6,7 +6,6 @@ function EduForm({handleEduChange, eduId, deleteEdus}){
     return(
         <div>
             <form className='form' >
-              <div>Education:{eduId}</div>
                 <input type='text' 
                        name="institution"
                        placeholder='Institution'
