@@ -1,19 +1,42 @@
 import React from 'react'
 import './Form.css';
 
-function ExpForm(){
+function ExpForm({handleExpChange}){
     return(
         <div>
-            <div className='form-title-with-btn'>
-              <h2>Experience</h2>
-              <button className='add-btn'>+ Experience</button>
-            </div>
             <form className='form'>
-                <input type='text' placeholder='Job Title'></input>
-                <input type='text' placeholder='Company'></input>
-                <input type='text' placeholder='Location'></input>
-                <input type='text' placeholder='Start Date'></input>
-                <input type='text' placeholder='End Date'></input>
+                <input type='text' 
+                       placeholder='Job Title'
+                       name='jobTitle'
+                       onChange={handleExpChange}
+
+                />
+
+                <input type='text' 
+                       placeholder='Company'
+                       name='company'
+                       onChange={handleExpChange}
+                />
+
+                <input type='text' 
+                       placeholder='Location'
+                       name='location'
+                       onChange={handleExpChange}
+               />
+
+                <input type='text' 
+                       placeholder='Start Date'
+                       name='startDate'
+                       onChange={handleExpChange}
+                />
+
+                <input type='text' 
+                       placeholder='End Date'
+                       name='endDate'
+                       onChange={handleExpChange}
+                />
+
+
                 <textarea placeholder='description(add two - three bullet points here)'></textarea>
                
             </form>

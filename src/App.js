@@ -16,18 +16,10 @@ function App() {
     phoneNumber:'000-000-000',
     linkedIn:'linkedin',
   })
-  // const[submittedAboutInfo, setSubmittedAboutInfo] = useState({...aboutInfo})
-  
-  // function onSubmitAboutForm(e){
-  //   e.preventDefault();
-  //   setSubmittedAboutInfo({...aboutInfo})
-
-  // }
 
   function handleAboutChange(e){
          setAboutInfo({...aboutInfo, [e.target.name]: e.target.value})
      }
-
 
   //EDUCATION INFO STATE---------------------------------------
 
@@ -41,32 +33,12 @@ function App() {
       startDate:'Start Date',
       endDate:'End Date',
     },
-  //   {
-  //     id:2,
-  //   institution:'Institution Name 2',
-  //   location:'City, State',
-  //   degreeType:'Degree Type',
-  //   degreeField:'Degree Field',
-  //   startDate:'Start Date',
-  //   endDate:'End Date',
-  // },
-  // {
-  //   id:3,
-  //   institution:'Institution Name 3',
-  //   location:'City, State',
-  //   degreeType:'Degree Type',
-  //   degreeField:'Degree Field',
-  //   startDate:'Start Date',
-  //   endDate:'End Date',
-  // }
 ];
-  
-  const [edus, setEdus] = useState(initialEdus)
-  const [selectedEduID, setSelectedEduID] = useState(1);
 
-  //const selectedEdu = edus.find(e => e.id === selectedEduID);
+const [edus, setEdus] = useState(initialEdus)
+const [selectedEduID, setSelectedEduID] = useState(1);
 
-function getIdCallback(id){
+function getEduID(id){
   setSelectedEduID(id);
 }
 
@@ -101,17 +73,58 @@ function deleteEdus(e){
 
 }
 
+  //EEXPERIENCE INFO STATE---------------------------------------
+
+  const initialExps = [
+    {
+      id:1,
+      jobTitle:'Job Title!!!',
+      company:'Company',
+      location:'Location',
+      startDate:'Start Date',
+      endDate:'End Date',
+      description:' job description'
+    },
+    {id:2,
+    jobTitle:'Job Title!!!',
+    company:'Company',
+    location:'Location',
+    startDate:'Start Date',
+    endDate:'End Date',
+    description:' job description'}];
+
+  const[exps, setExps] = useState(initialExps)
+  const[selectedExpID, setSelectedExpID] = useState(1);
+
+function getExpID(id){
+  setSelectedExpID(id);
+}
+
+function handleExpChange(e){ 
+  let updatedExps = exps.map(exp => {
+    if(exp.id === selectedExpID){
+      return{...exp, [e.target.name]:e.target.value};
+    }
+    return exp
+  });
+
+  setExps(updatedExps)  
+}
+
   return (
     <div className="App">
       <Form  handleAboutChange={handleAboutChange}  
              aboutInfo={aboutInfo} 
              handleEduChange={handleEduChange} 
              edus={edus} 
-             getIdCallback={getIdCallback}
+             getEduID={getEduID}
              addEdus={addEdus}
              deleteEdus={deleteEdus}
+             getExpID={getExpID}
+             handleExpChange={handleExpChange}
+             exps={exps}
              /> 
-      <Resume aboutInfo={aboutInfo} edus={edus}/>
+      <Resume aboutInfo={aboutInfo} edus={edus} exps={exps}/>
     </div>
   );
 }

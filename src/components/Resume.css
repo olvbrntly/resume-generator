@@ -25,7 +25,7 @@
 
 /* ----------- EDUCATION PORTION OF RESUME ---------- */
 
-.edu-resume-title{
+.edu-resume-title, .exp-resume-title{
     margin: 25px 0px 0px 10px;
     font-size:17px;
     font-weight: bold;
@@ -41,7 +41,7 @@
     margin-bottom: 10px;
 }
 .edu-institution{
-    font-weight:700
+    font-weight:700;
 }
 
 .edu-degree{
@@ -55,5 +55,22 @@
     gap:3px;
 }
 
+/* ---------EXPERIENCE PORTION OF RESUME------------ */
 
+.exp-top-line, .exp-middle, .exp-text{
+    margin:0px 10px 0px 10px;
+    font-size:15px;
+}
 
+.exp-top-line, .exp-middle{
+    display:flex;
+    justify-content: space-between;
+}
+
+.exp-company{
+    font-weight:700
+}
+
+.exp-job-title{
+    font-style:italic;
+}
