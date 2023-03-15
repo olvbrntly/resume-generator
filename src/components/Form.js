@@ -7,7 +7,7 @@ import './Form.css';
 
 
 
-function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getEduID, addEdus, deleteEdus,handleExpChange, exps, getExpID, deleteExps}){
+function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, edus, getEduID, addEdus, deleteEdus,handleExpChange, exps, getExpID,addExp, deleteExps}){
     return(
         <div className='form-container'>
             <h1>Resume Generator</h1>
@@ -24,7 +24,7 @@ function Form({onSubmitAboutForm, handleAboutChange,aboutInfo, handleEduChange, 
             </div>
             <div className='form-title-with-btn'>
               <h2>Experience</h2>
-              <button className='add-btn'>+ Experience</button>
+              <button className='add-btn' onClick={addExp}>+ Experience</button>
             </div>
             <div> {exps.map(exp =>(
                 <div key={exp.id} onSelect={() => {getExpID(exp.id)}} >

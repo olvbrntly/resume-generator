@@ -78,20 +78,13 @@ function deleteEdus(e){
   const initialExps = [
     {
       id:1,
-      jobTitle:'Job Title!!!',
+      jobTitle:'Job Title',
       company:'Company',
-      location:'Location',
+      location:'City, State',
       startDate:'Start Date',
       endDate:'End Date',
-      description:' job description'
-    },
-    {id:2,
-    jobTitle:'Job Title!!!',
-    company:'Company',
-    location:'Location',
-    startDate:'Start Date',
-    endDate:'End Date',
-    description:' job description'}];
+      description:' Job Description'
+    }];
 
   const[exps, setExps] = useState(initialExps)
   const[selectedExpID, setSelectedExpID] = useState(1);
@@ -111,6 +104,25 @@ function handleExpChange(e){
   setExps(updatedExps)  
 }
 
+function addExp(e){
+  e.preventDefault();
+  setExps(prevState => [...prevState, 
+    {
+      id:uuidv4(),
+      jobTitle:'Job Title',
+      company:'Company',
+      location:'City, State',
+      startDate:'Start Date',
+      endDate:'End Date',
+      description:'Job Description'
+    }])
+}
+
+function deleteExps(e){
+  e.preventDefault();
+  setExps(prevExps => prevExps.filter((edu)=> edu.id !== e.target.name))
+}
+
   return (
     <div className="App">
       <Form  handleAboutChange={handleAboutChange}  
@@ -122,6 +134,8 @@ function handleExpChange(e){
              deleteEdus={deleteEdus}
              getExpID={getExpID}
              handleExpChange={handleExpChange}
+             addExp={addExp}
+             deleteExps={deleteExps}
              exps={exps}
              /> 
       <Resume aboutInfo={aboutInfo} edus={edus} exps={exps}/>

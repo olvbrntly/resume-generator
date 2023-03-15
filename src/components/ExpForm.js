@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css';
 
-function ExpForm({handleExpChange}){
+function ExpForm({handleExpChange, deleteExps, expId}){
     return(
         <div>
             <form className='form'>
@@ -38,6 +38,8 @@ function ExpForm({handleExpChange}){
 
 
                 <textarea placeholder='description(add two - three bullet points here)'></textarea>
+
+                {(expId !== 1) && <button onClick={deleteExps} name={expId}>Delete</button>}
                
             </form>
         </div>
