@@ -11,15 +11,15 @@ function ExpResume({exps}){
 
             <div>
                 {exps.map(exp =>(
-                    <div key={exp.id}>
+                    <div key={exp.id} className="exp">
                         <div className="exp-div">
                         <div className="exp-top-line">
-                                <div className="exp-company">Company</div>
-                                <div>Location</div>
+                                <div className="exp-company">{exp.company}</div>
+                                <div>{exp.location}</div>
                         </div>
                         <div className="exp-middle">
                                 <div className="exp-job-title">{exp.jobTitle}</div>
-                                <div>Start Date - End Date</div>
+                                <div>{exp.startDate} - {exp.endDate}</div>
                         </div>
                         <div className="exp-text">Text Box area</div>
                         </div>
