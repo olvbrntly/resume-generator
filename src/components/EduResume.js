@@ -33,32 +33,6 @@ function EduResume({eduInfo, edus}){
 
               ))}
             </div>
-            {/* <div>
-              {eduInfo.map(edu => (
-                <div>
-                    <div className="edu-line1">
-                        <div className="edu-institution">{edu.institution}</div>
-                        <div>{edu.location}</div>
-                    </div>
-
-                    <div className="edu-line2">
-                        <div className="edu-degree">
-                            <div>{edu.degreeType}</div>
-                            <div>in</div>
-                            <div>{edu.degreeField}</div>
-                        </div>
-                        
-                        <div className="edu-dates">
-                            <div>{edu.startDate}</div>
-                            <div>-</div>
-                            <div>{edu.endDate}</div>
-                        </div>
-                    </div>
-                </div>
-
-
-              ))}
-            </div> */}
            
         </div>
     )
