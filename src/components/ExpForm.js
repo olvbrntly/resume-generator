@@ -37,7 +37,10 @@ function ExpForm({handleExpChange, deleteExps, expId}){
                 />
 
 
-                <textarea placeholder='description(add two - three bullet points here)'></textarea>
+                <textarea placeholder='description(add two - three bullet points here)'
+                          name='description'
+                          onChange={handleExpChange}
+                          />
 
                 {(expId !== 1) && <button onClick={deleteExps} name={expId}>Delete</button>}
                

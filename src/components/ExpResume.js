@@ -21,7 +21,7 @@ function ExpResume({exps}){
                                 <div className="exp-job-title">{exp.jobTitle}</div>
                                 <div>{exp.startDate} - {exp.endDate}</div>
                         </div>
-                        <div className="exp-text">Text Box area</div>
+                        <div className="exp-text">{exp.description}</div>
                         </div>
                     </div>
                 ))}
