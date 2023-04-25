@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/resume-generator/static/css/main.ba9937f2.css",
+    "main.js": "/resume-generator/static/js/main.96bfc77d.js",
+    "index.html": "/resume-generator/index.html",
+    "main.ba9937f2.css.map": "/resume-generator/static/css/main.ba9937f2.css.map",
+    "main.96bfc77d.js.map": "/resume-generator/static/js/main.96bfc77d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba9937f2.css",
+    "static/js/main.96bfc77d.js"
+  ]
+}
